@@ -26,11 +26,11 @@ class Person extends GameObject {
 	}
 
 	update() {
-		window.addEventListener("keydown", keyDownListener, false);
+		document.addEventListener("keydown", keyDownListener, false);
 		function keyDownListener(event: any) {
 			keyPresses[event.key] = true;
 		}
-		window.addEventListener("keyup", keyUpListener, false);
+		document.addEventListener("keyup", keyUpListener, false);
 		function keyUpListener(event: any) {
 			keyPresses[event.key] = false;
 		}

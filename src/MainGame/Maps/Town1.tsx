@@ -1,11 +1,11 @@
 import React from "react";
 import GameObject from "../JsClasses/GameObject";
-import imageT from "../images/maps/town1.png";
-import heroone from "../images/characters/Male1.png";
-import herotwo from "../images/characters/Male16.png";
-import herothree from "../images/characters/Female12.png";
-import herofour from "../images/characters/Female24.png";
-import herofive from "../images/characters/Male2.png";
+import imageT from "../../images/maps/town1.png";
+import heroone from "../../images/characters/Male9.png";
+import herotwo from "../../images/characters/Male16.png";
+import herothree from "../../images/characters/Female12.png";
+import herofour from "../../images/characters/Female24.png";
+import herofive from "../../images/characters/Male2.png";
 import { utils } from "../Utils/Utils";
 import Person from "../JsClasses/Person";
 
@@ -13,10 +13,12 @@ const isAuthPlayer = (id: any) => {
 	return id === 1;
 };
 
+
 const hero1 = new Person({
 	isPlayerControlled: true,
 	isAuthPlayer: isAuthPlayer(1),
-	x: utils.withGrid(5),
+	playerSpeed: 5,
+	x: utils.withGrid(5/2),
 	y: utils.withGrid(16),
 	src: heroone,
 });
@@ -42,6 +44,7 @@ const hero4 = new Person({
 const hero5 = new Person({
 	isPlayerControlled: true,
 	isAuthPlayer: isAuthPlayer(2),
+	playerSpeed: 5,
 	x: utils.withGrid(55),
 	y: utils.withGrid(14),
 	src: herofive,
@@ -51,11 +54,11 @@ const Town1 = {
 	lowerSrc: imageT,
 	upperSrc: null,
 	gameObjects: {
-		hero: hero1,
 		hero2: hero2,
 		hero3: hero3,
 		hero4: hero4,
 		hero5: hero5,
+		hero: hero1,
 	},
 };
 

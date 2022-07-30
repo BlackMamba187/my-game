@@ -22,10 +22,11 @@ class OverWorldMap {
 	}
 	draw(context: any) {
 		//clear canvas
-		context.clearRect(0, 0, context.canvas.width, context.canvas.height);
+		context.clearRect(0, 0,context.canvas.width, context.canvas.height);
+		
 
 		//Draw Lower layer
-		context.drawImage(this.lowerImage, 0, 0);
+		context.drawImage(this.lowerImage, context.canvas.width/2, context.canvas.height/2);
 
 		//Draw Game Objects
 		Object.values(this.gameObjects).forEach((object) => {
@@ -35,7 +36,7 @@ class OverWorldMap {
 		});
 
 		//Draw Upper layer
-		context.drawImage(this.upperImage, 0, 0);
+		context.drawImage(this.upperImage, context.canvas.width/2, context.canvas.height/2);
 	}
 }
 
