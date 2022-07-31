@@ -13,7 +13,7 @@ function createWindow() {
 		width: width,
 		height: height,
 		fullscreenable: true,
-		//backgroundColor: "#000000",
+		backgroundColor: "#000000",
 	});
 	mainWindow.loadURL("http://localhost:3000");
 

@@ -2,13 +2,11 @@ import React from "react";
 import Canvas from "./Canvas/Canvas";
 import OverWorldMap from "./JsClasses/OverWorldMap";
 import Town1 from "./Maps/Town1";
-const width = 1920;
+const width = 1600;
+const height = 900;
 
-const height = 1080;
 const MainGame = () => {
 	const draw = (context: any) => {
-		//background
-		
 		//Map
 		const map = new OverWorldMap({
 			lowerSrc: Town1.lowerSrc,

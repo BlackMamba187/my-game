@@ -1,15 +1,12 @@
 import React from "react";
 
 class Sprite {
-	animations: any;
-	currentAnimation: any;
 	image: any;
-	isLoaded!: boolean;
 	gameObject: any;
-	animationFrameLimit: any;
-	animationFrameProgress: any;
 	currentDirection: number;
 	animationframes: any;
+	imageWidth: any;
+	imageHeight: any;
 
 	constructor(config: any) {
 		this.image = new Image();
@@ -19,6 +16,9 @@ class Sprite {
 
 		this.currentDirection = 0;
 		this.animationframes = 1;
+
+		this.imageWidth = config.imageWidth || 32;
+		this.imageHeight = config.imageHeight || 32;
 	}
 
 	drawFrame(context: any, frameX: number, frameY: number) {
@@ -26,8 +26,8 @@ class Sprite {
 
 		let y = this.gameObject.y;
 
-		const WIDTH = 32;
-		const HEIGHT = 32;
+		const WIDTH = this.imageWidth;
+		const HEIGHT = this.imageHeight;
 
 		context.drawImage(
 			this.image,
@@ -38,8 +38,8 @@ class Sprite {
 			HEIGHT,
 			x,
 			y,
-			32,
-			32
+			WIDTH * 1.5,
+			HEIGHT * 1.5
 		);
 	}
 

@@ -10,6 +10,10 @@ let frameCount = 0;
 
 let keyPresses: any = {};
 
+const isAuthPlayer = (id: any) => {
+	return id === 1;
+};
+
 class Person extends GameObject {
 	keys: any;
 
@@ -17,48 +21,51 @@ class Person extends GameObject {
 	isPlayerControlled: boolean;
 	isAuthPlayer: boolean;
 	moving!: boolean;
+	keydown: any;
+	keyup: any;
 
 	constructor(config: any) {
 		super(config);
 		this.isPlayerControlled = config.isPlayerControlled || false;
-		this.isAuthPlayer = config.isAuthPlayer || false;
+
+		
+		this.isAuthPlayer = isAuthPlayer(config.isAuthPlayer) || false;
+
+
 		this.playerSpeed = config.playerSpeed || 1;
+
+		this.keydown = document.addEventListener("keydown", (e) => {
+			keyPresses[e.key] = true;
+		});
+
+		this.keyup = document.addEventListener("keyup", (e) => {
+			keyPresses[e.key] = false;
+		});
 	}
 
 	update() {
-		document.addEventListener("keydown", keyDownListener, false);
-		function keyDownListener(event: any) {
-			keyPresses[event.key] = true;
-		}
-		document.addEventListener("keyup", keyUpListener, false);
-		function keyUpListener(event: any) {
-			keyPresses[event.key] = false;
-		}
-
 		if (this.isAuthPlayer && this.isPlayerControlled === true) {
-			const MainPlayerMovement = () => {
-				if (keyPresses.w) {
-					this.y -= this.playerSpeed;
-					this.sprite.currentDirection = 3;
-					this.moving = true;
-				}
-				if (keyPresses.a) {
-					this.x -= this.playerSpeed;
-					this.sprite.currentDirection = 1;
-					this.moving = true;
-				}
-				if (keyPresses.s) {
-					this.y += this.playerSpeed;
-					this.sprite.currentDirection = 0;
-					this.moving = true;
-				}
+			if (keyPresses.w) {
+				this.y -= this.playerSpeed;
+				this.sprite.currentDirection = 3;
+				this.moving = true;
+			}
+			if (keyPresses.a) {
+				this.x -= this.playerSpeed;
+				this.sprite.currentDirection = 1;
+				this.moving = true;
+			}
+			if (keyPresses.s) {
+				this.y += this.playerSpeed;
+				this.sprite.currentDirection = 0;
+				this.moving = true;
+			}
 
-				if (keyPresses.d) {
-					this.x += this.playerSpeed;
-					this.sprite.currentDirection = 2;
-					this.moving = true;
-				}
-			};
+			if (keyPresses.d) {
+				this.x += this.playerSpeed;
+				this.sprite.currentDirection = 2;
+				this.moving = true;
+			}
 
 			if (this.moving) {
 				frameCount++;
@@ -72,7 +79,6 @@ class Person extends GameObject {
 			}
 			this.moving = false;
 			this.sprite.animationframes = CYCLE_LOOP[currentLoopIndex];
-			MainPlayerMovement();
 		}
 	}
 }

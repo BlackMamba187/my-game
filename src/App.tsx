@@ -6,11 +6,7 @@ import MainGame from "./MainGame/MainGame";
 import Town1 from "./MainGame/Maps/Town1";
 
 const App = () => {
-	return <div>
-		<p>
-			hello world
-		</p>
-	</div>;
+	return <MainGame />;
 };
 
 export default App;

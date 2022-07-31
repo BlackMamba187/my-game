@@ -5,6 +5,7 @@ import PlayerRace from "./Race/PlayerRace";
 
 class Player extends Person {
 	maxHealthPoints: number;
+	expPoints: number;
 	armorClass: number;
 	alignment: any;
 	class: PlayerClass;
@@ -23,12 +24,13 @@ class Player extends Person {
 	equipment: any;
 	wealth: any;
 	language: any;
-	weight: any;
+	maxWeight: any;
 
 	constructor(config: any) {
 		super(config);
 
 		this.maxHealthPoints = config.maxHealthPoints || 1;
+		this.expPoints = config.expPoints || 0
 		this.armorClass = config.armorClass || 1;
 		this.alignment = config.alignment || "N";
 		this.class = new PlayerClass({}) || null;
@@ -46,7 +48,7 @@ class Player extends Person {
 		this.abilityScoreWis = config.abilityScoreWis || 1;
 		this.abilityScoreCha = config.abilityScoreCha || 1;
 
-		this.weight = config.weight || this.abilityScoreStr * 100;
+		this.maxWeight = config.maxWeight || this.abilityScoreStr * 100;
 
 		this.feat = config.feat || null;
 		this.spell = config.spell || null;
@@ -54,7 +56,7 @@ class Player extends Person {
 		this.wealth = config.wealth || 0;
 		this.language = config.language || null;
 	}
-	update() {}
+	
 }
 
 export default Player;

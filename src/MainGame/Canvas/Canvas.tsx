@@ -3,6 +3,7 @@ import React, { useEffect, useRef } from "react";
 
 const Canvas = ({ draw, height, width }: any) => {
 	const canvasRef = useRef(null);
+	
 
 	useEffect(() => {
 		const canvas = canvasRef.current;
@@ -10,6 +11,8 @@ const Canvas = ({ draw, height, width }: any) => {
 		var then = Date.now();
 		var now;
 		var fps = 60;
+
+		
 		const render = () => {
 			now = Date.now();
 
@@ -21,6 +24,7 @@ const Canvas = ({ draw, height, width }: any) => {
 			window.requestAnimationFrame(render);
 		};
 		render();
+		
 	}, [draw]);
 
 	return <canvas ref={canvasRef} height={height} width={width} />;
