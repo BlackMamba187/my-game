@@ -6,8 +6,6 @@ import { utils } from "../Utils/Utils";
 import Person from "./Person";
 import MainPlayer from "../../Auth/MainPlayer/MainPlayer";
 
-
-
 class OverWorldMap {
 	gameObjects: GameObject;
 	lowerImage: HTMLImageElement;

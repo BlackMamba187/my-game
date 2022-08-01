@@ -11,7 +11,8 @@ import herofour from "../../images/characters/Female24.png";
 import herofive from "../../images/characters/Male2.png";
 
 import Tree from "../../images/objects/tree1.png";
-
+import Fire from "../../images/objects/fire3.png";
+import campFire from "../../images/objects/campFire.png";
 //NPC'S
 const hero2 = new Person({
 	x: utils.withGrid(30),
@@ -72,6 +73,24 @@ const tree2 = new GameObject({
 	imageHeight: 160,
 });
 
+const fire= new GameObject({
+	isGameObject: true,
+	loop: [0, 1, 2, 3, 4, 5],
+	x: utils.withGrid(65),
+	y: utils.withGrid(20),
+	src: Fire,
+	imageWidth: 32,
+	imageHeight: 64,
+});
+
+const fire2= new GameObject({
+	isGameObject: true,
+	loop: [0, 1, 2, 3, 4, 5],
+	x: utils.withGrid(60),
+	y: utils.withGrid(20),
+	src: campFire,
+});
+
 const Town1 = {
 	lowerSrc: imageT,
 	upperSrc: null,
@@ -83,6 +102,8 @@ const Town1 = {
 		tree: tree,
 		tree2: tree2,
 		tree3: tree3,
+		fire: fire,
+		fire2: fire2
 	},
 };
 

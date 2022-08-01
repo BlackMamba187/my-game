@@ -1,7 +1,11 @@
 import React from "react";
 
 class PlayerClass {
-	constructor(config: any) {}
+	classLevel: any;
+	constructor(config: any) {
+
+		this.classLevel = config.classLevel
+	}
 }
 
 export default PlayerClass;

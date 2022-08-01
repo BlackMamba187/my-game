@@ -1,25 +1,42 @@
 import React from "react";
 import Person from "../../MainGame/JsClasses/Person";
 import { utils } from "../../MainGame/Utils/Utils";
-import heroone from "../../images/characters/Female12.png";
+import heroone from "../../images/characters/Male9.png";
 import Player from "../../MainGame/JsClasses/Player/Player";
+import Warrior from "../../MainGame/JsClasses/Player/Class/Warrior/Warrior";
+
+const myLevel = 1;
 
 const MainPlayer = new Player({
 	isPlayerControlled: true,
 	isAuthPlayer: 1, //UserID
-	expPoints: 0, //depends on played
-	// Creation process
 	src: heroone,
 
-	maxHealthPoints: null, //from Con & class & Race
+	expPoints: 0, //depends on played
+	currentExpPoints: 0,
 
-	armorClass: null, //fromclass & Race
+	maxHealthPoints: null, //from Con & class & Race
+	currentHealthPoints: null,
+
+	shield: null,//fromclass & Race
+	armor: null,//fromclass & Race
+	dodge: null,//fromclass & Race
+	natural: null,//fromclass & Race
+	deflect: null, //fromclass & Race
+
+
 	alignment: null, //Player picks
 
-	class: null, //Player picks & bonuses from Race
+	class: new Warrior({
+		classLevel: myLevel,
+	}), //Player picks & bonuses from Race
+
 	race: null, //Player picks
-	savingThrows: null, //fromclass & Race
-	
+
+	savingThrowFort: null,
+	savingThrowRef: null,
+	savingThrowWill: null, //fromclass & Race
+
 	meleeAtk: null, //from Str class & Race
 
 	rangedAtk: null, //from Dex class & Race
@@ -30,6 +47,7 @@ const MainPlayer = new Player({
 	abilityScoreInt: null, //Player picks & bonuses from Race
 	abilityScoreWis: null, //Player picks & bonuses from Race
 	abilityScoreCha: null, //Player picks & bonuses from Race
+
 	feat: null, //Player picks,
 	spell: null, //Player picks depending on class
 	equipment: null, //Player picks,
