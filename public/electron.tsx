@@ -3,9 +3,10 @@ const app = electron.app;
 const BrowserWindow = electron.BrowserWindow;
 const path = require("path");
 const isDev = require("electron-is-dev");
-const width = 1920;
 
+const width = 1920;
 const height = 1080;
+
 let mainWindow;
 
 function createWindow() {

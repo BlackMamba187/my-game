@@ -29,7 +29,7 @@ class GameObject {
 			animationframes: config.animationframes,
 		});
 	}
-	update(state: any) {
+	update() {
 		if (this.isGameObject === true) {
 			this.frameCount++;
 			if (this.frameCount >= this.frameLimit) {

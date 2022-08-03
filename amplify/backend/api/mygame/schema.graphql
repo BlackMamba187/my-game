@@ -20,84 +20,10 @@ type User
 type Hero @model @auth(rules: [{ allow: private, provider: userPools }]) {
 	id: ID!
 	User: [User]
-	Alignment: String
-	Image: String
-
-	MaxExpPoints: Int
-	CurrentExpPoints: Int
-
-	MaxHpPoints: Int
-	CurrentHpPoints: Int
-
-	Shield: Int
-	Armor: Int
-	Dodge: Int
-	Natural: Int
-	Deflect: Int
-
-	Class: [Class] @hasMany
-	Race: [Race] @hasMany
-
-	SavingThrowFort: Int
-	SavingThrowRef: Int
-	SavingThrowWill: Int
-
-	MeleeAtk: Int
-	RangedAtk: Int
-
-	AbilityScoreStr: Int
-	AbilityScoreDex: Int
-	AbilityScoreCon: Int
-	AbilityScoreInt: Int
-	AbilityScoreWis: Int
-	AbilityScoreCha: Int
-
-	Feat: [Feat] @hasMany
-	Spell: [Spell] @hasMany
-	Equipment: [Equipment] @hasMany
-	Wealth: Int
-	Lanuage: [Lanuage] @hasMany
-	MaxWeight: Int
-	Speed: Int
-	X: Int
-	Y: Int
-	Map: String
-
 	Game: [Game] @manyToMany(relationName: "gameHero")
-}
-
-type Class @model @auth(rules: [{ allow: private, provider: userPools }]) {
-	id: ID!
-  Name: String
-}
-
-type Race @model @auth(rules: [{ allow: private, provider: userPools }]) {
-	id: ID!
-  Name: String
-}
-
-type Feat @model @auth(rules: [{ allow: private, provider: userPools }]) {
-	id: ID!
-  Name: String
-}
-
-type Spell @model @auth(rules: [{ allow: private, provider: userPools }]) {
-	id: ID!
-  Name: String
-}
-
-type Equipment @model @auth(rules: [{ allow: private, provider: userPools }]) {
-	id: ID!
-  Name: String
-}
-
-type Lanuage @model @auth(rules: [{ allow: private, provider: userPools }]) {
-	id: ID!
-  Name: String
 }
 
 type Game @model @auth(rules: [{ allow: private, provider: userPools }]) {
 	id: ID!
-  Name: String
 	Hero: [Hero] @manyToMany(relationName: "gameHero")
 }

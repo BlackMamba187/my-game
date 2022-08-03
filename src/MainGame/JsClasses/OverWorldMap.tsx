@@ -1,10 +1,21 @@
 import React from "react";
 
 import GameObject from "./GameObject";
-import heroone from "../../images/characters/Male9.png";
+import heroone from "../../Assets/characters/Male9.png";
 import { utils } from "../Utils/Utils";
 import Person from "./Person";
-import MainPlayer from "../../Auth/MainPlayer/MainPlayer";
+import Player from "./Player";
+
+const MainPlayer = new Player({
+	isPlayerControlled: true,
+	isAuthPlayer: 1, //UserID
+	src: heroone,
+	level: 1,
+	playerSpeed: 2, // Race
+
+	x: utils.withGrid(10),
+	y: utils.withGrid(25),
+});
 
 class OverWorldMap {
 	gameObjects: GameObject;
@@ -35,6 +46,7 @@ class OverWorldMap {
 
 		//Human Players
 		MainPlayer.update()
+		MainPlayer.init()
 		MainPlayer.sprite.draw(context)
 
 		//Draw Game Objects

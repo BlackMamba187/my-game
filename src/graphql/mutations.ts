@@ -14,34 +14,6 @@ export const createUser = /* GraphQL */ `
       Hero {
         items {
           id
-          Alignment
-          Image
-          MaxExpPoints
-          CurrentExpPoints
-          MaxHpPoints
-          CurrentHpPoints
-          Shield
-          Armor
-          Dodge
-          Natural
-          Deflect
-          SavingThrowFort
-          SavingThrowRef
-          SavingThrowWill
-          MeleeAtk
-          RangedAtk
-          AbilityScoreStr
-          AbilityScoreDex
-          AbilityScoreCon
-          AbilityScoreInt
-          AbilityScoreWis
-          AbilityScoreCha
-          Wealth
-          MaxWeight
-          Speed
-          X
-          Y
-          Map
           createdAt
           updatedAt
           userHeroId
@@ -66,34 +38,6 @@ export const updateUser = /* GraphQL */ `
       Hero {
         items {
           id
-          Alignment
-          Image
-          MaxExpPoints
-          CurrentExpPoints
-          MaxHpPoints
-          CurrentHpPoints
-          Shield
-          Armor
-          Dodge
-          Natural
-          Deflect
-          SavingThrowFort
-          SavingThrowRef
-          SavingThrowWill
-          MeleeAtk
-          RangedAtk
-          AbilityScoreStr
-          AbilityScoreDex
-          AbilityScoreCon
-          AbilityScoreInt
-          AbilityScoreWis
-          AbilityScoreCha
-          Wealth
-          MaxWeight
-          Speed
-          X
-          Y
-          Map
           createdAt
           updatedAt
           userHeroId
@@ -118,34 +62,6 @@ export const deleteUser = /* GraphQL */ `
       Hero {
         items {
           id
-          Alignment
-          Image
-          MaxExpPoints
-          CurrentExpPoints
-          MaxHpPoints
-          CurrentHpPoints
-          Shield
-          Armor
-          Dodge
-          Natural
-          Deflect
-          SavingThrowFort
-          SavingThrowRef
-          SavingThrowWill
-          MeleeAtk
-          RangedAtk
-          AbilityScoreStr
-          AbilityScoreDex
-          AbilityScoreCon
-          AbilityScoreInt
-          AbilityScoreWis
-          AbilityScoreCha
-          Wealth
-          MaxWeight
-          Speed
-          X
-          Y
-          Map
           createdAt
           updatedAt
           userHeroId
@@ -176,94 +92,6 @@ export const createHero = /* GraphQL */ `
         updatedAt
         owner
       }
-      Alignment
-      Image
-      MaxExpPoints
-      CurrentExpPoints
-      MaxHpPoints
-      CurrentHpPoints
-      Shield
-      Armor
-      Dodge
-      Natural
-      Deflect
-      Class {
-        items {
-          id
-          Name
-          createdAt
-          updatedAt
-          heroClassId
-        }
-        nextToken
-      }
-      Race {
-        items {
-          id
-          Name
-          createdAt
-          updatedAt
-          heroRaceId
-        }
-        nextToken
-      }
-      SavingThrowFort
-      SavingThrowRef
-      SavingThrowWill
-      MeleeAtk
-      RangedAtk
-      AbilityScoreStr
-      AbilityScoreDex
-      AbilityScoreCon
-      AbilityScoreInt
-      AbilityScoreWis
-      AbilityScoreCha
-      Feat {
-        items {
-          id
-          Name
-          createdAt
-          updatedAt
-          heroFeatId
-        }
-        nextToken
-      }
-      Spell {
-        items {
-          id
-          Name
-          createdAt
-          updatedAt
-          heroSpellId
-        }
-        nextToken
-      }
-      Equipment {
-        items {
-          id
-          Name
-          createdAt
-          updatedAt
-          heroEquipmentId
-        }
-        nextToken
-      }
-      Wealth
-      Lanuage {
-        items {
-          id
-          Name
-          createdAt
-          updatedAt
-          heroLanuageId
-        }
-        nextToken
-      }
-      MaxWeight
-      Speed
-      X
-      Y
-      Map
       Game {
         items {
           id
@@ -298,94 +126,6 @@ export const updateHero = /* GraphQL */ `
         updatedAt
         owner
       }
-      Alignment
-      Image
-      MaxExpPoints
-      CurrentExpPoints
-      MaxHpPoints
-      CurrentHpPoints
-      Shield
-      Armor
-      Dodge
-      Natural
-      Deflect
-      Class {
-        items {
-          id
-          Name
-          createdAt
-          updatedAt
-          heroClassId
-        }
-        nextToken
-      }
-      Race {
-        items {
-          id
-          Name
-          createdAt
-          updatedAt
-          heroRaceId
-        }
-        nextToken
-      }
-      SavingThrowFort
-      SavingThrowRef
-      SavingThrowWill
-      MeleeAtk
-      RangedAtk
-      AbilityScoreStr
-      AbilityScoreDex
-      AbilityScoreCon
-      AbilityScoreInt
-      AbilityScoreWis
-      AbilityScoreCha
-      Feat {
-        items {
-          id
-          Name
-          createdAt
-          updatedAt
-          heroFeatId
-        }
-        nextToken
-      }
-      Spell {
-        items {
-          id
-          Name
-          createdAt
-          updatedAt
-          heroSpellId
-        }
-        nextToken
-      }
-      Equipment {
-        items {
-          id
-          Name
-          createdAt
-          updatedAt
-          heroEquipmentId
-        }
-        nextToken
-      }
-      Wealth
-      Lanuage {
-        items {
-          id
-          Name
-          createdAt
-          updatedAt
-          heroLanuageId
-        }
-        nextToken
-      }
-      MaxWeight
-      Speed
-      X
-      Y
-      Map
       Game {
         items {
           id
@@ -420,94 +160,6 @@ export const deleteHero = /* GraphQL */ `
         updatedAt
         owner
       }
-      Alignment
-      Image
-      MaxExpPoints
-      CurrentExpPoints
-      MaxHpPoints
-      CurrentHpPoints
-      Shield
-      Armor
-      Dodge
-      Natural
-      Deflect
-      Class {
-        items {
-          id
-          Name
-          createdAt
-          updatedAt
-          heroClassId
-        }
-        nextToken
-      }
-      Race {
-        items {
-          id
-          Name
-          createdAt
-          updatedAt
-          heroRaceId
-        }
-        nextToken
-      }
-      SavingThrowFort
-      SavingThrowRef
-      SavingThrowWill
-      MeleeAtk
-      RangedAtk
-      AbilityScoreStr
-      AbilityScoreDex
-      AbilityScoreCon
-      AbilityScoreInt
-      AbilityScoreWis
-      AbilityScoreCha
-      Feat {
-        items {
-          id
-          Name
-          createdAt
-          updatedAt
-          heroFeatId
-        }
-        nextToken
-      }
-      Spell {
-        items {
-          id
-          Name
-          createdAt
-          updatedAt
-          heroSpellId
-        }
-        nextToken
-      }
-      Equipment {
-        items {
-          id
-          Name
-          createdAt
-          updatedAt
-          heroEquipmentId
-        }
-        nextToken
-      }
-      Wealth
-      Lanuage {
-        items {
-          id
-          Name
-          createdAt
-          updatedAt
-          heroLanuageId
-        }
-        nextToken
-      }
-      MaxWeight
-      Speed
-      X
-      Y
-      Map
       Game {
         items {
           id
@@ -524,258 +176,6 @@ export const deleteHero = /* GraphQL */ `
     }
   }
 `;
-export const createClass = /* GraphQL */ `
-  mutation CreateClass(
-    $input: CreateClassInput!
-    $condition: ModelClassConditionInput
-  ) {
-    createClass(input: $input, condition: $condition) {
-      id
-      Name
-      createdAt
-      updatedAt
-      heroClassId
-    }
-  }
-`;
-export const updateClass = /* GraphQL */ `
-  mutation UpdateClass(
-    $input: UpdateClassInput!
-    $condition: ModelClassConditionInput
-  ) {
-    updateClass(input: $input, condition: $condition) {
-      id
-      Name
-      createdAt
-      updatedAt
-      heroClassId
-    }
-  }
-`;
-export const deleteClass = /* GraphQL */ `
-  mutation DeleteClass(
-    $input: DeleteClassInput!
-    $condition: ModelClassConditionInput
-  ) {
-    deleteClass(input: $input, condition: $condition) {
-      id
-      Name
-      createdAt
-      updatedAt
-      heroClassId
-    }
-  }
-`;
-export const createRace = /* GraphQL */ `
-  mutation CreateRace(
-    $input: CreateRaceInput!
-    $condition: ModelRaceConditionInput
-  ) {
-    createRace(input: $input, condition: $condition) {
-      id
-      Name
-      createdAt
-      updatedAt
-      heroRaceId
-    }
-  }
-`;
-export const updateRace = /* GraphQL */ `
-  mutation UpdateRace(
-    $input: UpdateRaceInput!
-    $condition: ModelRaceConditionInput
-  ) {
-    updateRace(input: $input, condition: $condition) {
-      id
-      Name
-      createdAt
-      updatedAt
-      heroRaceId
-    }
-  }
-`;
-export const deleteRace = /* GraphQL */ `
-  mutation DeleteRace(
-    $input: DeleteRaceInput!
-    $condition: ModelRaceConditionInput
-  ) {
-    deleteRace(input: $input, condition: $condition) {
-      id
-      Name
-      createdAt
-      updatedAt
-      heroRaceId
-    }
-  }
-`;
-export const createFeat = /* GraphQL */ `
-  mutation CreateFeat(
-    $input: CreateFeatInput!
-    $condition: ModelFeatConditionInput
-  ) {
-    createFeat(input: $input, condition: $condition) {
-      id
-      Name
-      createdAt
-      updatedAt
-      heroFeatId
-    }
-  }
-`;
-export const updateFeat = /* GraphQL */ `
-  mutation UpdateFeat(
-    $input: UpdateFeatInput!
-    $condition: ModelFeatConditionInput
-  ) {
-    updateFeat(input: $input, condition: $condition) {
-      id
-      Name
-      createdAt
-      updatedAt
-      heroFeatId
-    }
-  }
-`;
-export const deleteFeat = /* GraphQL */ `
-  mutation DeleteFeat(
-    $input: DeleteFeatInput!
-    $condition: ModelFeatConditionInput
-  ) {
-    deleteFeat(input: $input, condition: $condition) {
-      id
-      Name
-      createdAt
-      updatedAt
-      heroFeatId
-    }
-  }
-`;
-export const createSpell = /* GraphQL */ `
-  mutation CreateSpell(
-    $input: CreateSpellInput!
-    $condition: ModelSpellConditionInput
-  ) {
-    createSpell(input: $input, condition: $condition) {
-      id
-      Name
-      createdAt
-      updatedAt
-      heroSpellId
-    }
-  }
-`;
-export const updateSpell = /* GraphQL */ `
-  mutation UpdateSpell(
-    $input: UpdateSpellInput!
-    $condition: ModelSpellConditionInput
-  ) {
-    updateSpell(input: $input, condition: $condition) {
-      id
-      Name
-      createdAt
-      updatedAt
-      heroSpellId
-    }
-  }
-`;
-export const deleteSpell = /* GraphQL */ `
-  mutation DeleteSpell(
-    $input: DeleteSpellInput!
-    $condition: ModelSpellConditionInput
-  ) {
-    deleteSpell(input: $input, condition: $condition) {
-      id
-      Name
-      createdAt
-      updatedAt
-      heroSpellId
-    }
-  }
-`;
-export const createEquipment = /* GraphQL */ `
-  mutation CreateEquipment(
-    $input: CreateEquipmentInput!
-    $condition: ModelEquipmentConditionInput
-  ) {
-    createEquipment(input: $input, condition: $condition) {
-      id
-      Name
-      createdAt
-      updatedAt
-      heroEquipmentId
-    }
-  }
-`;
-export const updateEquipment = /* GraphQL */ `
-  mutation UpdateEquipment(
-    $input: UpdateEquipmentInput!
-    $condition: ModelEquipmentConditionInput
-  ) {
-    updateEquipment(input: $input, condition: $condition) {
-      id
-      Name
-      createdAt
-      updatedAt
-      heroEquipmentId
-    }
-  }
-`;
-export const deleteEquipment = /* GraphQL */ `
-  mutation DeleteEquipment(
-    $input: DeleteEquipmentInput!
-    $condition: ModelEquipmentConditionInput
-  ) {
-    deleteEquipment(input: $input, condition: $condition) {
-      id
-      Name
-      createdAt
-      updatedAt
-      heroEquipmentId
-    }
-  }
-`;
-export const createLanuage = /* GraphQL */ `
-  mutation CreateLanuage(
-    $input: CreateLanuageInput!
-    $condition: ModelLanuageConditionInput
-  ) {
-    createLanuage(input: $input, condition: $condition) {
-      id
-      Name
-      createdAt
-      updatedAt
-      heroLanuageId
-    }
-  }
-`;
-export const updateLanuage = /* GraphQL */ `
-  mutation UpdateLanuage(
-    $input: UpdateLanuageInput!
-    $condition: ModelLanuageConditionInput
-  ) {
-    updateLanuage(input: $input, condition: $condition) {
-      id
-      Name
-      createdAt
-      updatedAt
-      heroLanuageId
-    }
-  }
-`;
-export const deleteLanuage = /* GraphQL */ `
-  mutation DeleteLanuage(
-    $input: DeleteLanuageInput!
-    $condition: ModelLanuageConditionInput
-  ) {
-    deleteLanuage(input: $input, condition: $condition) {
-      id
-      Name
-      createdAt
-      updatedAt
-      heroLanuageId
-    }
-  }
-`;
 export const createGame = /* GraphQL */ `
   mutation CreateGame(
     $input: CreateGameInput!
@@ -783,7 +183,6 @@ export const createGame = /* GraphQL */ `
   ) {
     createGame(input: $input, condition: $condition) {
       id
-      Name
       Hero {
         items {
           id
@@ -806,7 +205,6 @@ export const updateGame = /* GraphQL */ `
   ) {
     updateGame(input: $input, condition: $condition) {
       id
-      Name
       Hero {
         items {
           id
@@ -829,7 +227,6 @@ export const deleteGame = /* GraphQL */ `
   ) {
     deleteGame(input: $input, condition: $condition) {
       id
-      Name
       Hero {
         items {
           id
@@ -864,52 +261,6 @@ export const createGameHero = /* GraphQL */ `
           updatedAt
           owner
         }
-        Alignment
-        Image
-        MaxExpPoints
-        CurrentExpPoints
-        MaxHpPoints
-        CurrentHpPoints
-        Shield
-        Armor
-        Dodge
-        Natural
-        Deflect
-        Class {
-          nextToken
-        }
-        Race {
-          nextToken
-        }
-        SavingThrowFort
-        SavingThrowRef
-        SavingThrowWill
-        MeleeAtk
-        RangedAtk
-        AbilityScoreStr
-        AbilityScoreDex
-        AbilityScoreCon
-        AbilityScoreInt
-        AbilityScoreWis
-        AbilityScoreCha
-        Feat {
-          nextToken
-        }
-        Spell {
-          nextToken
-        }
-        Equipment {
-          nextToken
-        }
-        Wealth
-        Lanuage {
-          nextToken
-        }
-        MaxWeight
-        Speed
-        X
-        Y
-        Map
         Game {
           nextToken
         }
@@ -919,7 +270,6 @@ export const createGameHero = /* GraphQL */ `
       }
       game {
         id
-        Name
         Hero {
           nextToken
         }
@@ -950,52 +300,6 @@ export const updateGameHero = /* GraphQL */ `
           updatedAt
           owner
         }
-        Alignment
-        Image
-        MaxExpPoints
-        CurrentExpPoints
-        MaxHpPoints
-        CurrentHpPoints
-        Shield
-        Armor
-        Dodge
-        Natural
-        Deflect
-        Class {
-          nextToken
-        }
-        Race {
-          nextToken
-        }
-        SavingThrowFort
-        SavingThrowRef
-        SavingThrowWill
-        MeleeAtk
-        RangedAtk
-        AbilityScoreStr
-        AbilityScoreDex
-        AbilityScoreCon
-        AbilityScoreInt
-        AbilityScoreWis
-        AbilityScoreCha
-        Feat {
-          nextToken
-        }
-        Spell {
-          nextToken
-        }
-        Equipment {
-          nextToken
-        }
-        Wealth
-        Lanuage {
-          nextToken
-        }
-        MaxWeight
-        Speed
-        X
-        Y
-        Map
         Game {
           nextToken
         }
@@ -1005,7 +309,6 @@ export const updateGameHero = /* GraphQL */ `
       }
       game {
         id
-        Name
         Hero {
           nextToken
         }
@@ -1036,52 +339,6 @@ export const deleteGameHero = /* GraphQL */ `
           updatedAt
           owner
         }
-        Alignment
-        Image
-        MaxExpPoints
-        CurrentExpPoints
-        MaxHpPoints
-        CurrentHpPoints
-        Shield
-        Armor
-        Dodge
-        Natural
-        Deflect
-        Class {
-          nextToken
-        }
-        Race {
-          nextToken
-        }
-        SavingThrowFort
-        SavingThrowRef
-        SavingThrowWill
-        MeleeAtk
-        RangedAtk
-        AbilityScoreStr
-        AbilityScoreDex
-        AbilityScoreCon
-        AbilityScoreInt
-        AbilityScoreWis
-        AbilityScoreCha
-        Feat {
-          nextToken
-        }
-        Spell {
-          nextToken
-        }
-        Equipment {
-          nextToken
-        }
-        Wealth
-        Lanuage {
-          nextToken
-        }
-        MaxWeight
-        Speed
-        X
-        Y
-        Map
         Game {
           nextToken
         }
@@ -1091,7 +348,6 @@ export const deleteGameHero = /* GraphQL */ `
       }
       game {
         id
-        Name
         Hero {
           nextToken
         }

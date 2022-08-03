@@ -10,7 +10,7 @@ const Canvas = ({ draw, height, width }: any) => {
 		const context = canvas.getContext("2d");
 		var then = Date.now();
 		var now;
-		var fps = 60;
+		var fps = 120;
 
 		
 		const render = () => {

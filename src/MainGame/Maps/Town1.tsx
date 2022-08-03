@@ -3,16 +3,16 @@ import GameObject from "../JsClasses/GameObject";
 import { utils } from "../Utils/Utils";
 import Person from "../JsClasses/Person";
 
-import imageT from "../../images/maps/town1.png";
-import heroone from "../../images/characters/Male9.png";
-import herotwo from "../../images/characters/Male16.png";
-import herothree from "../../images/characters/Female12.png";
-import herofour from "../../images/characters/Female24.png";
-import herofive from "../../images/characters/Male2.png";
+import imageT from "../../Assets/maps/town1.png";
+import herotwo from "../../Assets/characters/Male16.png";
+import herothree from "../../Assets/characters/Female12.png";
+import herofour from "../../Assets/characters/Female24.png";
+import herofive from "../../Assets/characters/Male2.png";
 
-import Tree from "../../images/objects/tree1.png";
-import Fire from "../../images/objects/fire3.png";
-import campFire from "../../images/objects/campFire.png";
+import Tree from "../../Assets/objects/tree1.png";
+import Fire from "../../Assets/objects/fire3.png";
+import campFire from "../../Assets/objects/campFire.png";
+import Alantern from "../../Assets/objects/lantern.png";
 //NPC'S
 const hero2 = new Person({
 	x: utils.withGrid(30),
@@ -91,6 +91,17 @@ const fire2= new GameObject({
 	src: campFire,
 });
 
+const lantern = new GameObject({
+	isGameObject: true,
+	loop: [0, 1, 2, 3, 4, 5, 6, 7],
+	x: utils.withGrid(68),
+	y: utils.withGrid(24),
+	src: Alantern,
+	imageWidth: 32,
+	imageHeight: 95,
+
+});
+
 const Town1 = {
 	lowerSrc: imageT,
 	upperSrc: null,
@@ -103,7 +114,8 @@ const Town1 = {
 		tree2: tree2,
 		tree3: tree3,
 		fire: fire,
-		fire2: fire2
+		fire2: fire2,
+		lantern: lantern,
 	},
 };
 
