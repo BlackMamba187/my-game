@@ -1,7 +1,9 @@
 .game-container {
 	display: flex;
+	margin-top: 3%;
 	justify-content: center;
 	align-items: center;
+	image-rendering: pixelated;
 }
 .game-container canvas {
 	image-rendering: pixelated;
@@ -9,10 +11,6 @@
 
 .inventory {
 	position: absolute;
-	width: 50em;
-    height: 50em;
-	background: #707070;
-	opacity: 0.4;
+	image-rendering: pixelated;
 	display: none;
 }
-

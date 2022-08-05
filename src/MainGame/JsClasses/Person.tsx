@@ -5,7 +5,7 @@ import GameObject from "./GameObject";
 const CYCLE_LOOP = [0, 1, 2];
 let currentLoopIndex = 0;
 
-const FRAME_LIMIT = 12;
+const FRAME_LIMIT = 20;
 let frameCount = 0;
 
 let keyPresses: any = {};

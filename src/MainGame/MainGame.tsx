@@ -3,11 +3,10 @@ import Canvas from "./Canvas/Canvas";
 import OverWorldMap from "./JsClasses/OverWorldMap";
 import Town1 from "./Maps/Town1";
 
-const width = 1600;
-const height = 900;
+const width = 1920 * 1.5;
+const height = 1080 * 1.5;
 
 const MainGame = () => {
-
 	const draw = (context: any) => {
 		//Map
 		const map = new OverWorldMap({
@@ -17,13 +16,16 @@ const MainGame = () => {
 		});
 		map.draw(context);
 	};
+
 	return (
 		<div className="game-container">
 			<Canvas draw={draw} height={height} width={width} />
-
-			<div id="inventory" className="inventory">
-				
-			</div>
+			<canvas
+				id="Inventory"
+				className="inventory"
+				height={height}
+				width={width}
+			/>
 		</div>
 	);
 };

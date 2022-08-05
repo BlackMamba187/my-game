@@ -31,15 +31,14 @@ class Sprite {
 
 		context.drawImage(
 			this.image,
-
 			frameX * WIDTH,
 			frameY * HEIGHT,
 			WIDTH,
 			HEIGHT,
 			x,
 			y,
-			WIDTH * 1.5,
-			HEIGHT * 1.5
+			WIDTH * 2.5,
+			HEIGHT * 2.5
 		);
 	}
 

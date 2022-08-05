@@ -69,7 +69,7 @@ class Player extends Person {
 		this.deflect = config.deflect || 0;
 
 		this.Initiative = config.Initiative + (this.abilityScoreDex - 10) || 0;
-		this.playerSpeed = config.playerSpeed || 1;
+		this.playerSpeed = config.playerSpeed || 1.5;
 
 		this.savingThrowFort = RaceFort(this.race);
 		this.savingThrowRef = RaceRef(this.race);

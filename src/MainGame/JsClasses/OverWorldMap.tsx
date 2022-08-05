@@ -10,11 +10,10 @@ const MainPlayer = new Player({
 	isPlayerControlled: true,
 	isAuthPlayer: 1, //UserID
 	src: heroone,
-	level: 1,
-	playerSpeed: 2, // Race
+	playerSpeed: 3,
 
 	x: utils.withGrid(10),
-	y: utils.withGrid(25),
+	y: utils.withGrid(45),
 });
 
 class OverWorldMap {
@@ -34,7 +33,7 @@ class OverWorldMap {
 	draw(context: any) {
 		//clear canvas
 		context.clearRect(0, 0, context.canvas.width, context.canvas.height);
-	
+
 		//Draw Lower layer
 		context.drawImage(
 			this.lowerImage,
@@ -45,9 +44,9 @@ class OverWorldMap {
 		);
 
 		//Human Players
-		MainPlayer.update()
-		MainPlayer.init()
-		MainPlayer.sprite.draw(context)
+		MainPlayer.update();
+		MainPlayer.init();
+		MainPlayer.sprite.draw(context);
 
 		//Draw Game Objects
 		Object.values(this.gameObjects).forEach((object) => {

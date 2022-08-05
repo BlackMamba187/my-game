@@ -1,4 +1,4 @@
-//@ts-nocheck
+
 import React, { useEffect, useRef } from "react";
 
 const Canvas = ({ draw, height, width }: any) => {
@@ -6,11 +6,11 @@ const Canvas = ({ draw, height, width }: any) => {
 	
 
 	useEffect(() => {
-		const canvas = canvasRef.current;
+		const canvas:any = canvasRef.current;
 		const context = canvas.getContext("2d");
 		var then = Date.now();
 		var now;
-		var fps = 120;
+		var fps = 60;
 
 		
 		const render = () => {

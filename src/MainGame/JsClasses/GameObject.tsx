@@ -20,7 +20,7 @@ class GameObject {
 
 		this.frameCount = 0;
 		this.currentLoopIndex = 0;
-		this.frameLimit = 20;
+		this.frameLimit = config.framLimit ||15;
 		this.sprite = new Sprite({
 			gameObject: this,
 			src: config.src,

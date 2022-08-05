@@ -13,37 +13,35 @@ import Tree from "../../Assets/objects/tree1.png";
 import Fire from "../../Assets/objects/fire3.png";
 import campFire from "../../Assets/objects/campFire.png";
 import Alantern from "../../Assets/objects/lantern.png";
+
 //NPC'S
 const hero2 = new Person({
-	x: utils.withGrid(30),
+	x: utils.withGrid(40),
 	y: utils.withGrid(15),
 	src: herotwo,
 });
 
 const hero3 = new Person({
-	x: utils.withGrid(75),
-	y: utils.withGrid(20),
+	x: utils.withGrid(130),
+	y: utils.withGrid(30),
 	src: herothree,
 });
 
 const hero4 = new Person({
-	x: utils.withGrid(72),
-	y: utils.withGrid(20),
+	x: utils.withGrid(135),
+	y: utils.withGrid(30),
 	src: herofour,
 });
 
 const hero5 = new Person({
-	isPlayerControlled: true,
-	isAuthPlayer: 6,
-	playerSpeed: 2,
-	x: utils.withGrid(80),
-	y: utils.withGrid(14),
+	x: utils.withGrid(150),
+	y: utils.withGrid(20),
 	src: herofive,
 });
 
 //objects
 
-const tree = new GameObject({
+{ /*const tree = new GameObject({
 	isGameObject: true,
 	loop: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
 	x: utils.withGrid(60),
@@ -100,7 +98,7 @@ const lantern = new GameObject({
 	imageWidth: 32,
 	imageHeight: 95,
 
-});
+});*/}
 
 const Town1 = {
 	lowerSrc: imageT,
@@ -110,12 +108,7 @@ const Town1 = {
 		hero3: hero3,
 		hero4: hero4,
 		hero5: hero5,
-		tree: tree,
-		tree2: tree2,
-		tree3: tree3,
-		fire: fire,
-		fire2: fire2,
-		lantern: lantern,
+		
 	},
 };
 
