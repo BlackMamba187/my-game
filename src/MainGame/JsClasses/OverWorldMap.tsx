@@ -1,61 +1,104 @@
 import React from "react";
 
 import GameObject from "./GameObject";
-import heroone from "../../Assets/characters/Male9.png";
+import heroone from "../../Assets/characters/Male3.png";
 import { utils } from "../Utils/Utils";
 import Person from "./Person";
 import Player from "./Player";
 
-const MainPlayer = new Player({
+const MainPlayer = new Person({
 	isPlayerControlled: true,
 	isAuthPlayer: 1, //UserID
 	src: heroone,
-	playerSpeed: 3,
+	playerSpeed: 2,
+	x: utils.withGrid(112),
+	y: utils.withGrid(50),
+});
 
-	x: utils.withGrid(10),
-	y: utils.withGrid(45),
+const Player2 = new Person({
+	isPlayerControlled: true,
+	isAuthPlayer: 2, //UserID
+	src: heroone,
+	playerSpeed: 2,
+	x: utils.withGrid(117),
+	y: utils.withGrid(50),
 });
 
 class OverWorldMap {
 	gameObjects: GameObject;
 	lowerImage: HTMLImageElement;
-	//upperImage: HTMLImageElement;
+	upperImage: HTMLImageElement;
+	walls: any;
+	scale: number;
 
 	constructor(config: any) {
 		this.gameObjects = config.gameObjects;
 
 		this.lowerImage = new Image();
-		this.lowerImage.src = config.lowerSrc;
+		this.upperImage = new Image();
 
-		//this.upperImage = new Image();
-		//this.upperImage.src = config.upperSrc ;
+		this.lowerImage.src = config.lowerSrc;
+		this.upperImage.src = config.upperSrc;
+
+		this.scale = 2;
+		this.walls = config.walls || {};
 	}
-	draw(context: any) {
+
+	addWall(x: any, y: any) {
+		this.walls[`${x},${y}`] = true;
+	}
+	removeWall(x: any, y: any) {
+		delete this.walls[`${x},${y}`];
+	}
+
+	runOverworldMap(context: any) {
 		//clear canvas
 		context.clearRect(0, 0, context.canvas.width, context.canvas.height);
+		//who to follow
+		const CameraPerson = MainPlayer;
 
 		//Draw Lower layer
 		context.drawImage(
 			this.lowerImage,
-			0,
-			0,
-			context.canvas.width,
-			context.canvas.height
+			context.canvas.width / 2 - CameraPerson.x,
+			context.canvas.height / 2 - CameraPerson.y,
+			this.lowerImage.width * this.scale,
+			this.lowerImage.height * this.scale
 		);
 
 		//Human Players
-		MainPlayer.update();
-		MainPlayer.init();
-		MainPlayer.sprite.draw(context);
+		MainPlayer.sprite.draw(context, CameraPerson);
+		MainPlayer.update(context, this.walls);
+
+		Player2.sprite.draw(context, CameraPerson);
+		Player2.update(context,  this.walls);
 
 		//Draw Game Objects
 		Object.values(this.gameObjects).forEach((object) => {
-			object.update();
-			object.sprite.draw(context);
+			object.update(context);
+			object.sprite.draw(context, CameraPerson);
 		});
 
 		//Draw Upper layer
-		//this.upperLoaded && context.drawImage(this.upperImage, 0, 0);
+		context.drawImage(
+			this.upperImage,
+			context.canvas.width / 2 - CameraPerson.x,
+			context.canvas.height / 2 - CameraPerson.y,
+			this.lowerImage.width * this.scale,
+			this.lowerImage.height * this.scale
+		);
+
+		//menu above game
+		MainPlayer.CreateMenu(context);
+		Player2.CreateMenu(context);
+	}
+
+	draw(context: any) {
+		this.lowerImage.onload = () => {
+			this.upperImage.onload = () => {
+				this.runOverworldMap(context);
+			};
+		};
 	}
 }
 

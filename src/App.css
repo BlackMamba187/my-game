@@ -1,16 +1,17 @@
 .game-container {
-	display: flex;
-	margin-top: 3%;
-	justify-content: center;
-	align-items: center;
-	image-rendering: pixelated;
-}
-.game-container canvas {
-	image-rendering: pixelated;
+	left: 50% !important;
+	top: 50% !important;
+	transform: translate(-50%, -50%);
+	position: absolute;
 }
 
-.inventory {
-	position: absolute;
+.game-container .canvas{
 	image-rendering: pixelated;
-	display: none;
+}
+.hud {
+	left: 50% !important;
+	top: 50% !important;
+	transform: translate(-50%, -50%);
+	position: absolute;
+	z-index: 99;
 }

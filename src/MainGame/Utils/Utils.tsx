@@ -13,7 +13,10 @@ import Rabbit from "../Player/PlayerRace/Rabbit";
 
 export const utils = {
 	withGrid(n: number) {
-		return n * 16;
+		return n * 32;
+	},
+	asGridCoord(x: number, y: number) {
+		return `${x * 32},${y * 32}`;
 	},
 };
 

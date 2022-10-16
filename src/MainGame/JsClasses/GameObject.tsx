@@ -10,14 +10,15 @@ class GameObject {
 	frameCount: number;
 	currentLoopIndex: number;
 	frameLimit: number;
+	isMounted: boolean;
 
 	constructor(config: any) {
+		this.isMounted = false;
 		this.x = config.x;
 		this.y = config.y;
+
 		this.isGameObject = config.isGameObject || false;
-
 		this.loop = config.loop;
-
 		this.frameCount = 0;
 		this.currentLoopIndex = 0;
 		this.frameLimit = config.framLimit ||15;
@@ -27,9 +28,18 @@ class GameObject {
 			imageWidth: config.imageWidth || 32,
 			imageHeight: config.imageHeight || 32,
 			animationframes: config.animationframes,
+			currentDirection: config.currentDirection,
 		});
 	}
-	update() {
+
+	mount(map:any) {
+		console.log("mounting!")
+		this.isMounted = true;
+		map.addWall(this.x, this.y);
+	  }
+	
+
+	update(context: any, walls:any) {
 		if (this.isGameObject === true) {
 			this.frameCount++;
 			if (this.frameCount >= this.frameLimit) {

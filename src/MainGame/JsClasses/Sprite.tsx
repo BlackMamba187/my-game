@@ -1,4 +1,5 @@
 import React from "react";
+import { utils } from "../Utils/Utils";
 
 class Sprite {
 	image: any;
@@ -7,6 +8,7 @@ class Sprite {
 	animationframes: any;
 	imageWidth: any;
 	imageHeight: any;
+	scale: number;
 
 	constructor(config: any) {
 		this.image = new Image();
@@ -14,17 +16,18 @@ class Sprite {
 
 		this.gameObject = config.gameObject;
 
-		this.currentDirection = 0;
+		this.currentDirection = config.currentDirection || 0;
 		this.animationframes = 1;
 
+		this.scale = config.scale || 2;
 		this.imageWidth = config.imageWidth || 32;
 		this.imageHeight = config.imageHeight || 32;
 	}
 
-	drawFrame(context: any, frameX: number, frameY: number) {
-		let x = this.gameObject.x;
+	drawFrame(context: any, frameX: number, frameY: number, CameraPerson: any) {
+		let x = this.gameObject.x + context.canvas.width / 2 - CameraPerson.x;
 
-		let y = this.gameObject.y;
+		let y = this.gameObject.y + context.canvas.height / 2 - CameraPerson.y;
 
 		const WIDTH = this.imageWidth;
 		const HEIGHT = this.imageHeight;
@@ -37,13 +40,18 @@ class Sprite {
 			HEIGHT,
 			x,
 			y,
-			WIDTH * 2.5,
-			HEIGHT * 2.5
+			WIDTH * this.scale,
+			HEIGHT * this.scale
 		);
 	}
 
-	draw(context: any) {
-		this.drawFrame(context, this.animationframes, this.currentDirection);
+	draw(context: any, CameraPerson: any) {
+		this.drawFrame(
+			context,
+			this.animationframes,
+			this.currentDirection,
+			CameraPerson
+		);
 	}
 }
 

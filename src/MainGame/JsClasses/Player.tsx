@@ -10,7 +10,7 @@ import {
 	RaceRef,
 	RaceWill,
 } from "../Utils/Utils";
-import Hud from "./Hud";
+
 
 class Player extends Person {
 	level: any;
@@ -44,7 +44,6 @@ class Player extends Person {
 	wealth: any;
 	language: any;
 	maxWeight: any;
-	hud: Hud;
 	Initiative: any;
 
 	constructor(config: any) {
@@ -103,11 +102,10 @@ class Player extends Person {
 		this.rangedAtk =
 			this.abilityScoreDex - 10 + ClassBAB(this.level, this.class);
 
-		this.hud = new Hud({});
+		
 	}
 
 	init() {
-		this.hud.init(this.isAuthPlayer, this.isPlayerControlled);
 	}
 }
 
